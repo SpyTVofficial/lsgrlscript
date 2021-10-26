@@ -2,5 +2,10 @@
 
     <info author="itsSpyTV" version="0.0.1" name="LSGRL" type="gamemode"/>
 
+	<script src="display\infobox.lua" type="client"/>
+
     <script src="carystem/engine_server.lua" type="server" />
+    
+	<file src="images\infoboxbg.png" />
+
 </meta>

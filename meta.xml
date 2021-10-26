@@ -2,6 +2,5 @@
 
     <info author="itsSpyTV" version="0.0.1" name="LSGRL" type="gamemode"/>
 
-    
-
+    <script src="carystem/engine_server.lua" type="server" />
 </meta>

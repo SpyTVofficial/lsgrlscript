@@ -2,17 +2,22 @@
 
     <info author="itsSpyTV" version="0.0.1" name="LSGRL" type="gamemode"/>
 
-    <script src="carystem/engine_server.lua" type="server" />
+    <script src="admin/allround.lua" />
+    <script src="admin/rank_system/ranks.lua" />
+
+    <script src="carystem/engine_lights_server.lua" type="server" />
 
 	<script src="display\infobox.lua" type="client"/>
 
-	<script src="environment\chat.lua" />
+	<script src="environment\nearbychat.lua" />
 
-	<file src="images\infoboxbg.png" />
+    <script src="fraktionen/allround.lua" />
 
     <file src="utils/money_server.lua" type="server" />
 
 	<script src="vio_gui\vio_gui_client.lua" type="client" />
 	<script src="vio_gui\ring_menue_client.lua" type="client" />
+
+	<file src="images\infoboxbg.png" />
 
 </meta>

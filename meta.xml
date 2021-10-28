@@ -2,10 +2,14 @@
 
     <info author="itsSpyTV" version="0.0.1" name="LSGRL" type="gamemode"/>
 
+    <script src="mysql/mysql_connect.lua" />
+
+    <script src="admin/admincmds.lua" />
     <script src="admin/allround.lua" />
     <script src="admin/rank_system/ranks.lua" />
 
     <script src="carystem/engine_lights_server.lua" type="server" />
+	<script src="carsystem\tempomat.lua" type="client" />	
 
 	<script src="display\infobox.lua" type="client"/>
 
@@ -13,7 +17,7 @@
 
     <script src="fraktionen/allround.lua" />
 
-    <file src="utils/money_server.lua" type="server" />
+    <script src="utils/money_server.lua" type="server" />
 
 	<script src="vio_gui\vio_gui_client.lua" type="client" />
 	<script src="vio_gui\ring_menue_client.lua" type="client" />

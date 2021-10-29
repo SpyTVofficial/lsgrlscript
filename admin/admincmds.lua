@@ -65,3 +65,5 @@ end
 
 
 addCommandHandler ( "goto", goto_func )
+addCommandHandler ( "ochat", ochat_func )
+

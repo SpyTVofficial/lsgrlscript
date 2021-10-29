@@ -11,7 +11,7 @@ function duty (player, cmd, skin)
     if vioGetElementData( player, "fraktion") == 1 then
         local x, y, z = getElementPosition (player)
         local px, py, pz = getElementPosition ( dutyIconGarage )
-        if getDistanceBetweenPoints3D ( x, y, z, px3, py3, pz3 ) then
+        if getDistanceBetweenPoints3D ( x, y, z, px3, py3, pz3 ) <= 5 then
             setElementHealth ( player, 100 )
             setElementHunger ( player, 100 )
             if not isOnDuty(player) then
@@ -37,5 +37,25 @@ function duty (player, cmd, skin)
         triggerClientEvent( player, "infobox_start", getRootElemen(), "\n Du bist kein\nPolizist!", 7500, 125, 0, 0)
 end
 
+function offduty_func ( player )
+    if getDistanceBetweenPoints3D ( x, y, z, px3, py3, pz3 ) <= 5 then
+	    if isAbleOffduty ( player ) then
+		    if not getPedOccupiedVehicle ( player ) then
+			    setPedSkin ( player, vioGetElementData ( player, "skinid" ) )
+			    if vioGetElementData ( player, "fraktion" ) ~= 8 then
+				    takeAllWeapons ( player )
+    			end
+	    	else
+		    	outputChatBox ( "Du darfst nicht in einem Fahrzeug sitzen.", player, 125, 0, 0 )
+    	    end
+	    else
+		    outputChatBox ( "Du bist kein Beamter im Dienst!", player, 125, 0, 0 )
+	    end
+    else 
+        triggerClientEvent ( player, "infobox_start", getRootElement(), "\nDu bist nicht\nan der Richtigen\nStelle", 7500, 125, 0, 0 )
+    end
+end
+
 addEventHandler ( "onPickupHit", dutyIcon, dutyhit )
 addCommandHandler ( "goduty", duty )
+addCommandHandler ( "offduty", offduty_func )

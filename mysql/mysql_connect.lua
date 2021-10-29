@@ -1,7 +1,7 @@
 ocal gMysqlHost = "127.0.0.1"
 local gMysqlUser = "root"
 local gMysqlPass = "29112005"
-local gMysqlDatabase = "db"
+local gMysqlDatabase = "db l"
 handler = nil
 playerUID = {}
 playerUIDName = {}
@@ -23,7 +23,7 @@ function MySQL_Startup ( )
 	end
 	playerUIDName[0] = "none"
 	playerUID["none"] = 0
-end
+endl
 MySQL_Startup()
 
 

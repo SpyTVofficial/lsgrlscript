@@ -4,7 +4,8 @@
 
     <script src="mysql/mysql_connect.lua" />
 
-    <script src="admin/admincmds.lua" type="server" />
+    <script src="admin/admincmds.lua" />
+    <script src="admin/aduty.lua" type="server" />
     <script src="admin/allround.lua" />
     <script src="admin/rank_system/ranks.lua" />
 

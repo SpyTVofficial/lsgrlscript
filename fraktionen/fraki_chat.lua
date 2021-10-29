@@ -13,6 +13,7 @@ factionRankNames = {}
 		factionRankNames[i][3] = "Lieutenant"
 		factionRankNames[i][4] = "Stellv. Polizeichef"
 		factionRankNames[i][5] = "Polizeichef"
+
 function teamchat_func ( player, cmd, ... )	
     local parametersTable = {...}
     local text = table.concat( parametersTable, " " )
@@ -39,7 +40,7 @@ function teamchat_func ( player, cmd, ... )
             end
         end
     else
-        triggerClientEvent ( player, "infobox_start", getRootElement(), "\nDu bist in\nkeiner Fraktion!", 5000, 125, 0, 0 )
+        triggerClientEvent ( player, "infobox_start", getRootElement(), "\nDu bist in\nkein Mitglied \neiner Fraktion!", 5000, 125, 0, 0 )
     end
 end
 

@@ -18,6 +18,7 @@
 
     <script src="fraktionen/allround.lua" />
     <script src="fraktionen/fraki_chat.lua" />
+    <script src="fraktionen/frakicmds.lua" />
     <script src="fraktionen/sapd/functions.lua" />
 
     <script src="utils/money_server.lua" type="server" />

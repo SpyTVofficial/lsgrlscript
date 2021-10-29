@@ -48,14 +48,14 @@ function toggleVehicleTrunkBind ( player, key, state )
 end
 
 function bindControls ( ) 
-    bindKey ( thePlayer, "o", "down", toggleEngine, "Motor an/aus####" ) 
+    bindKey ( thePlayer, "o", "down", toggleEngine, "Motor an/aus" ) 
     bindKey ( thePlayer, "l", "down", toggleVehicleLights, "Licht an/aus")
     bindKey ( thePlayer, "sub_mission", "down", toggleVehicleTrunkBind, "Kofferraum auf/zu" )
 end 
 
 function vehexit ()
 	unbindKey ( source, "l", "down", toggleVehicleLights, "Licht an/aus" )
-	unbindKey ( source, "x", "down", toggleVehicleEngine, "Motor an/aus" )
+	unbindKey ( source, "o", "down", toggleVehicleEngine, "Motor an/aus" )
 	unbindKey ( source, "sub_mission", "down", toggleVehicleTrunkBind, "Kofferraum auf/zu" )
 end
 

@@ -1,4 +1,4 @@
-function sendMessageToNearbyPlayers ( message, messageType )
+function ( message, messageType )
 	local pname = getPlayerName ( source )
 	
 	if messageType == 0 and chatAble ( source ) then

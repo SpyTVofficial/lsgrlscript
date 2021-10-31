@@ -33,10 +33,11 @@ function teamchat_func ( player, cmd, ... )
             end
                     
             for playeritem, index in pairs(fraktionMembers[Fraktion]) do 
-            if isElement ( playeritem ) then
-                outputChatBox ( "[ "..title.." "..getPlayerName(player)..": "..text.." ]", playeritem, red, green, blue )
-            else
-                fraktionMembers[Fraktion][playeritem] = nil
+                if isElement ( playeritem ) then
+                    outputChatBox ( "[ "..title.." "..getPlayerName(player)..": "..text.." ]", playeritem, red, green, blue )
+                else
+                    fraktionMembers[Fraktion][playeritem] = nil
+                end
             end
         end
     else

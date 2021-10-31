@@ -2,24 +2,20 @@
 
     <info author="itsSpyTV" version="0.0.3" name="LSGRL" type="gamemode"/>
 
-    <script src="mysql/mysql_connect.lua" />
-
     <script src="admin/admincmds.lua" />
     <script src="admin/aduty.lua" type="server" />
     <script src="admin/allround.lua" />
     <script src="admin/rank_system/ranks.lua" />
 
-    <script src="carystem/engine_lights_server.lua" type="server" />
+    <script src="carsystem/engine_lights_server.lua" type="server" />
 	<script src="carsystem/tempomat.lua" type="client" />	
 
 	<script src="display/infobox.lua" type="client"/>
 
-	<script src="environment/nearbychat.lua" />
-
     <script src="fraktionen/allround.lua" />
     <script src="fraktionen/fraki_chat.lua" />
     <script src="fraktionen/frakicmds.lua" />
-    <script src="fraktionen/sapd/functions.lua" />
+    <script src="fraktionen/sapd/duty.lua" />
 
     <script src="utils/money_server.lua" type="server" />
 

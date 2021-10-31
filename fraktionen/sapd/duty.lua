@@ -35,6 +35,7 @@ function duty (player, cmd, skin)
         end
     else
         triggerClientEvent( player, "infobox_start", getRootElemen(), "\n Du bist kein\nPolizist!", 7500, 125, 0, 0)
+	end
 end
 
 function offduty_func ( player )

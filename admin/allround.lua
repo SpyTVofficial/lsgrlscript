@@ -5,7 +5,7 @@ end
 
 function playerLeave()
     local leftPlayer = getPlayerName(source)
-    outputChatBox(leftPlayer ... "hat den Server verlassen...", 125, 125, 125)
+    outputChatBox(leftPlayer .. "hat den Server verlassen...", 125, 125, 125)
 end
 
 function onPlayerChangeNicks()

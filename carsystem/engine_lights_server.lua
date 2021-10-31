@@ -1,12 +1,10 @@
 function toggleEngine ( thePlayer ) 
-    local isOn = getVehicleEngineState ( getPlayerOccupiedVehicle(thePlayer) ) 
-    if isPlayerInVehicle ( thePlayer ) then 
+    local isOn = getVehicleEngineState ( getPedOccupiedVehicle(thePlayer) ) 
+    if isPedInVehicle ( thePlayer ) then 
         if isOn == true then 
-            setVehicleEngineState ( getPlayerOccupiedVehicle(thePlayer), false ) 
-            outputChatBox ( "*Engine off*", thePlayer ) 
+            setVehicleEngineState ( getPedOccupiedVehicle(thePlayer), false ) 
         elseif isOn == false then 
-            setVehicleEngineState ( getPlayerOccupiedVehicle(thePlayer), true ) 
-            outputChatBox ( "*Engine on*", thePlayer ) 
+            setVehicleEngineState ( getPedOccupiedVehicle(thePlayer), true ) 
         end 
     end 
 end 
@@ -47,17 +45,18 @@ function toggleVehicleTrunkBind ( player, key, state )
 	end
 end
 
-function bindControls ( ) 
-    bindKey ( thePlayer, "o", "down", toggleEngine, "Motor an/aus" ) 
-    bindKey ( thePlayer, "l", "down", toggleVehicleLights, "Licht an/aus")
-    bindKey ( thePlayer, "sub_mission", "down", toggleVehicleTrunkBind, "Kofferraum auf/zu" )
+function bindControls ( player ) 
+    bindKey ( player, "o", "down", toggleEngine, "Motor an/aus" ) 
+    bindKey ( player, "l", "down", toggleVehicleLights, "Licht an/aus")
+    bindKey ( player, "sub_mission", "down", toggleVehicleTrunkBind, "Kofferraum auf/zu" )
+	outputChatBox("Keybinds neu angelegt!", source, 0, 255, 0)
 end 
 
 function vehexit ()
-	unbindKey ( source, "l", "down", toggleVehicleLights, "Licht an/aus" )
+	unbindKey ( source, "l", "down", toggleVehicleLights, "Licht an/aus"  )
 	unbindKey ( source, "o", "down", toggleVehicleEngine, "Motor an/aus" )
 	unbindKey ( source, "sub_mission", "down", toggleVehicleTrunkBind, "Kofferraum auf/zu" )
 end
 
-addEventHandler ("onPlayerVehicleExit", getRootElement(), vehexit )
+addCommandHandler ("rebind", bindControls)
 addEventHandler ( "onPlayerJoin", getRootElement(), bindControls ) 

@@ -1,7 +1,7 @@
-ocal gMysqlHost = "127.0.0.1"
-local gMysqlUser = "root"
-local gMysqlPass = "29112005"
-local gMysqlDatabase = "db l"
+local gMysqlHost = "192.168.1.1"
+local gMysqlUser = "stdb_user_itsspytv_5242311"
+local gMysqlPass = "fbb84a4f4543d2357617"
+local gMysqlDatabase = "stdb_user_itsspytv_5242311"
 handler = nil
 playerUID = {}
 playerUIDName = {}

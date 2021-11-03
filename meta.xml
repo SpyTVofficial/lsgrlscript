@@ -1,6 +1,6 @@
 <meta>
 
-    <info author="itsSpyTV" version="0.0.3" name="LSGRL" type="gamemode"/>
+    <info author="itsSpyTV" version="0.0.4" name="LSGRL" type="gamemode"/>
 
     <script src="mysql/mysql_connect.lua" />
 

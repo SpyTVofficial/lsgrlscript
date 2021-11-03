@@ -23,12 +23,5 @@ function MySQL_Startup ( )
 	end
 	playerUIDName[0] = "none"
 	playerUID["none"] = 0
-endl
-MySQL_Startup()
-
-
-function saveEverythingForScriptStop ( )
-	saveDepotInDB()
-	updateBizKasse()
 end
-addEventHandler ( "onResourceStop", resourceRoot, saveEverythingForScriptStop )
+MySQL_Startup()

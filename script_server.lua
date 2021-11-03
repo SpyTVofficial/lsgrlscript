@@ -1,11 +1,13 @@
 setServerPassword("29112005")
 
 function spawnOnLogin()
-    spawnPlayer(theplayer, x, y, z, 0, 137, 0, 0)
+    spawnPlayer(source, -1420, -294, 14)
+	fadeCamera(source, true)
+	setCameraTarget(source)
 end
 
 function spawnOnDeath()
-    spawnPlayer(thePlayer, x, y, z, 0, 137, 0, 0)
+    spawnPlayer(thePlayer, -1420, -294, 14, 0, 137, 0, 0)
 end
 
 function checkLogout ()
@@ -24,5 +26,4 @@ function checkLogout ()
 	end
 end
 
-addCommandHandler ( "save", save_func )
-addEventHandler("onPlayerLogin", root, spawnOnLogin)
+addEventHandler("onClientResourceStart", root, spawnOnLogin)

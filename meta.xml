@@ -2,12 +2,15 @@
 
     <info author="itsSpyTV" version="0.0.3" name="LSGRL" type="gamemode"/>
 
+    <script src="mysql/mysql_connect.lua" />
+
     <script src="admin/admincmds.lua" />
     <script src="admin/aduty.lua" type="server" />
     <script src="admin/allround.lua" />
     <script src="admin/rank_system/ranks.lua" />
 
     <script src="carsystem/engine_lights_server.lua" type="server" />
+    <script src="carsystem/tacho/client.lua" type="client" />
 	<script src="carsystem/tempomat.lua" type="client" />	
 
 	<script src="display/infobox.lua" type="client"/>

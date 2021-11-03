@@ -1,11 +1,11 @@
 function playerJoin()
     local joinedPlayer = getPlayerName(source)
-    outputChatBox(joinedPlayer .. "hat den Server betreten...", 125, 125, 125)
+    outputChatBox(joinedPlayer .. "hat den Server betreten...", getRootElement() ,125, 125, 125)
 end
 
 function playerLeave()
     local leftPlayer = getPlayerName(source)
-    outputChatBox(leftPlayer .. "hat den Server verlassen...", 125, 125, 125)
+    outputChatBox(leftPlayer .. "hat den Server verlassen...", getRootElement(), 125, 125, 125)
 end
 
 function onPlayerChangeNicks()

@@ -20,6 +20,8 @@
     <script src="fraktionen/frakicmds.lua" />
     <script src="fraktionen/sapd/duty.lua" />
 
+    <script src="script_server.lua" type="server" />
+
     <script src="utils/money_server.lua" type="server" />
 
 	<script src="vio_gui/vio_gui_client.lua" type="client" />

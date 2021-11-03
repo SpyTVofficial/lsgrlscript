@@ -1,9 +1,9 @@
 setServerPassword("29112005")
 
-function spawnOnLogin()
-    spawnPlayer(source, -1420, -294, 14)
+function spawnOnLogin( root )
+    spawnPlayer(source, -1420, -294, 14, 0, 137, 0, 0)
 	fadeCamera(source, true)
-	setCameraTarget(source)
+	setCameraTarget(source, source)
 end
 
 function spawnOnDeath()

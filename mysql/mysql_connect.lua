@@ -23,5 +23,6 @@ function MySQL_Startup ( )
 	end
 	playerUIDName[0] = "none"
 	playerUID["none"] = 0
+	outputDebugString("[MySQL_Startup] Connection successful")
 end
 MySQL_Startup()

@@ -3,11 +3,13 @@
     <info author="itsSpyTV" version="0.0.4" name="LSGRL" type="gamemode"/>
 
     <script src="mysql/mysql_connect.lua" />
+    <script src="mysql/mysql_functions.lua" />
 
     <script src="admin/admincmds.lua" />
     <script src="admin/aduty.lua" type="server" />
     <script src="admin/allround.lua" />
     <script src="admin/rank_system/ranks.lua" />
+    <script src="admin/warns_system/warns_server.lua" type ="server" />
 
     <script src="carsystem/engine_lights_server.lua" type="server" />
     <script src="carsystem/tacho/client.lua" type="client" />
@@ -15,11 +17,23 @@
 
 	<script src="display/infobox.lua" type="client"/>
 
+    <script src="environment/realtime.lua" />
+
     <script src="fraktionen/allround.lua" />
     <script src="fraktionen/fraki_chat.lua" />
     <script src="fraktionen/frakicmds.lua" />
     <script src="fraktionen/sapd/duty.lua" />
-
+    
+	<script src="register_login/account.lua" />
+	<script src="register_login/camflight_client.lua" type="client" />
+	<script src="register_login/loggedin_mysql.lua" type="server" />
+	<script src="register_login/login_window.lua" type="client"/>
+	<script src="register_login/register_login_server.lua" />
+	<script src="register_login/register_window.lua" type="client"/>
+	<script src="register_login/premium.lua" />
+	<script src="register_login/serial_validator.lua" />
+	<script src="register_login/tutorial_client.lua" type="client" cache="false"/>
+		
     <script src="script_server.lua" type="server" />
 
     <script src="utils/money_server.lua" type="server" />

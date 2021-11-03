@@ -41,13 +41,13 @@ function toggleVehicleTrunkBind ( player, key, state )
 	end
 end
 
-function bindControls ( ) 
-    bindKey ( player, "o", "down", toggleEngine, "Motor an/aus" ) 
-    bindKey ( player, "l", "down", toggleVehicleLights, "Licht an/aus")
+function bindControls ( source ) 
+    bindKey ( source, "o", "down", toggleEngine, "Motor an/aus" ) 
+    bindKey ( source, "l", "down", toggleVehicleLights, "Licht an/aus")
 	outputChatBox("Keybinds neu angelegt!", source, 0, 255, 0)
 end 
 
-function vehexit ()
+function vehexit ( )
 	unbindKey ( source, "l", "down", toggleVehicleLights, "Licht an/aus"  )
 	unbindKey ( source, "o", "down", toggleVehicleEngine, "Motor an/aus" )
 end

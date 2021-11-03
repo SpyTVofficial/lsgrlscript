@@ -88,7 +88,7 @@ function drawSpeed()
 			
 			dxSetRenderTarget(renderTarget, true)
 			local str = tostring(math.floor(speed))
-			if mph then str = str .. "mph" else str = str .. "kmh" end
+			if mph then str = str .. "mp/h" else str = str .. "km/h" end
 			dxDrawBorderedText(str, 0, 0, 230 * resolutionFactor, 90 * resolutionFactor, clr, 5 * resolutionFactor, "default", "right", "bottom", true)
 			
 			local damage = math.floor((health * 219) + 10)

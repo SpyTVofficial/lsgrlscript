@@ -46,7 +46,7 @@ addEventHandler ( "onPlayerConnect", getRootElement(), function ( nick, ip, unam
 			cancelEvent ( true, "Du hast 3 Warns! Ablaufdatum des nächsten Warns: "..getLowestWarnExtensionTime ( nick ) )
 		end
 	end
-	insertPlayerIntoLoggedIn ( nick, ip, serial )
+	insertPlayerIntoLoggedIn ( nick, serial, ip )
 end )
 
 
@@ -629,12 +629,12 @@ function login_func ( player, passwort )
 							
 							dbExec ( handler, "UPDATE ?? SET ??=?, ??=?, ??=? WHERE ??=?", "players", "Last_login", lastlogin, "LastLogin", lastLoginInt, "Serial", serial, "UID", playerUID[pname] )
 							
-							outputChatBox ( "#383838═══════ #FFD700Ultimate-RL Info #383838═══════", player, 56, 56, 56, true )
-							outputChatBox ( "╔ Willkommen auf Ultimate-RL.", player, 255, 215, 0 )
+							outputChatBox ( "#383838══════ #FFD700LSG-RL Info #383838══════", player, 56, 56, 56, true )
+							outputChatBox ( "╔ Willkommen auf LSG-RL.", player, 255, 215, 0 )
 							outputChatBox ( "╠ Bei Fragen und Problemen kannst du /report benutzen.", player, 255, 215, 0 )
-							outputChatBox ( "╠ Um einer Fraktion beizutreten, melde dich im Teamspeak³.", player, 255, 215, 0 )
-							outputChatBox ( "╠ Teamspeak: 151.80.196.135:1578", player, 255, 215, 0 )
-							outputChatBox ( "╚ Forum: Ultimate-RL.de", player, 255, 215, 0 )
+--							outputChatBox ( "╠ Um einer Fraktion beizutreten, melde dich im Teamspeak³.", player, 255, 215, 0 )
+--							outputChatBox ( "╠ Teamspeak: 151.80.196.135:1578", player, 255, 215, 0 )
+							outputChatBox ( "╚ Der Server befindet sich noch in Entwicklung!", player, 255, 215, 0 )
 							outputChatBox ( "═════════════════════════", player, 56, 56, 56 )
 							
 							local resultlogout = dbPoll ( dbQuery ( handler, "SELECT ??, ?? FROM ?? WHERE ??=?", "Position", "Waffen", "logout", "UID", playerUID[pname] ), -1 )

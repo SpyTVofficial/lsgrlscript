@@ -30,11 +30,6 @@ function checkLogout ()
 	end
 end
 
-
-function noblur ( player )
-    setPlayerBlurLevel ( player, 0 )
-end
-
 function getSecTime ( duration )
 
 	if not duration then
@@ -54,6 +49,44 @@ end
 function getMinTime ()
 
 	return getSecTime ( 0 )
+end
+
+invalidChars = {}
+for i = 33, 39 do
+invalidChars[i] = true
+end
+for i = 40, 43 do
+invalidChars[i] = true
+end
+invalidChars[47] = true
+for i = 58, 64 do
+invalidChars[i] = true
+end
+invalidChars[92] = true
+invalidChars[94] = true
+invalidChars[96] = true
+for i = 123, 126 do
+invalidChars[i] = true
+end
+
+function hasInvalidChar ( player )
+
+	name = getPlayerName ( player )
+	for i, index in pairs ( invalidChars ) do
+		if not gettok ( name, 1, i ) or gettok ( name, 1, i ) ~= name then
+			return true
+		end
+	end
+	return false
+end
+
+function hasInvalidCharString ( strin )
+	for i, index in pairs ( invalidChars ) do
+		if not gettok ( strin, 1, i ) or gettok ( strin, 1, i ) ~= strin then
+			return true
+		end
+	end
+	return false
 end
 
 addEventHandler("onClientResourceStart", root, noblur)

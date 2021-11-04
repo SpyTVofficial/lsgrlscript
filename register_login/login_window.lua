@@ -202,7 +202,7 @@ local function mainRender()
 		elseif ( phase == 2 ) then
 			local posX, alpha, size = interpolateBetween( resX/2-300, 0, 225, resX/2-20, 255, 487.5, getProgress( 1500 ), 'OutBack' )
 			local alpha = (alpha > 255 and 255 or alpha)
-			dxDrawText('Ultimate-RL', posX, resY/2-55, left, top, tocolor(255,255,0,alpha), 1, segoeui, 'left', 'center') 
+			dxDrawText('LSG-RL', posX, resY/2-55, left, top, tocolor(255,255,0,alpha), 1, segoeui, 'left', 'center') 
 			dxDrawRectangle( posX, resY / 2 - 12.5 , 250, 25, tocolor(255, 255, 255, alpha))
 			dxDrawRectangle( posX, resY / 2 - 12.5+37.5 , 250, 25, tocolor(255, 255, 255, alpha))
 			dxDrawRectangle( posX+225, resY / 2 - 12.5+37.5 , 25, 25, tocolor(255, 64, 0, alpha))
@@ -211,13 +211,13 @@ local function mainRender()
 			dxDrawText( pass, posX+5, resY / 2+37.5 , left, top,(#username == 0 and tocolor(150, 150, 150, 255) or tocolor(0, 0, 0, 255)), 0.5, segoeui, 'left', 'center')
 			dxDrawRectangle( resX/2-243.75, resY/2-112.5, size, 225, tocolor( 255, 255, 255, 25) )
 			dxDrawImage( resX/2-231.25, resY/2-100, 200, 200, 'images/profil.png' )
-			dxDrawText ( "Ultimate-RL", resX-375, resY-100, 375, screenheight, tocolor ( 255, 255, 0 ), 2, "pricedown", "left", "top" )
+			dxDrawText ( "LSG-RL", resX-375, resY-100, 375, screenheight, tocolor ( 255, 255, 0 ), 2, "pricedown", "left", "top" )
 			if ( lastTick+1500 <= getTickCount() ) then
 				setSettings( 'ready', 0 )
 			end
 		end
 	elseif ( state == 'ready' ) then
-		dxDrawText('Ultimate-RL', resX/2-20, resY/2-55, left, top, tocolor(255,255,0,255), 1, segoeui, 'left', 'center') 
+		dxDrawText('LSG-RL', resX/2-20, resY/2-55, left, top, tocolor(255,255,0,255), 1, segoeui, 'left', 'center') 
 		dxDrawRectangle( resX/2-20, resY / 2 - 12.5 , 250, 25, tocolor(255, 255, 255, 255))
 		dxDrawRectangle( resX/2-20, resY / 2 - 12.5+37.5 , 250, 25, tocolor(255, 255, 255, 255))
 		dxDrawRectangle( resX/2-20+225, resY / 2 - 12.5+37.5 , 25, 25, tocolor(255, 64, 0, 255))
@@ -226,7 +226,7 @@ local function mainRender()
 		dxDrawText( pass, resX/2-20+5, resY / 2+37.5 , left, top,(#password == 0 and tocolor(150, 150, 150, 255) or tocolor(0, 0, 0, 255)), 0.5, segoeui, 'left', 'center')
 		dxDrawRectangle( resX/2-243.75, resY/2-112.5, 487.5, 225, tocolor( 255, 255, 255, 25) )
 		dxDrawImage( resX/2-231.25, resY/2-100, 200, 200, 'images/profil.png' )
-		dxDrawText ( "Ultimate-RL", resX-375, resY-100, 375, screenheight, tocolor ( 255, 255, 0 ), 2, "pricedown", "left", "top" )
+		dxDrawText ( "LSG-RL", resX-375, resY-100, 375, screenheight, tocolor ( 255, 255, 0 ), 2, "pricedown", "left", "top" )
 		if #password > 0 then
 			dxDrawImage( resX/2-70+250, resY/2-11.25+37.5 , 22.5, 22.5, 'images/show.png')
 		end
@@ -272,7 +272,7 @@ local function mainRender()
 	elseif ( state == 'finished' ) then
 		local posX, alpha, alpha1 = interpolateBetween(  resX/2-231.25, 255, 25, resX, 0, 0, getProgress( 950 ), 'Linear' )
 		
-		dxDrawText('Ultimate-Reallife', posX+220, resY/2-55, left, top, tocolor(255,255,0,255), 1, segoeui, 'left', 'center') 
+		dxDrawText('LSG-Reallife', posX+220, resY/2-55, left, top, tocolor(255,255,0,255), 1, segoeui, 'left', 'center') 
 		dxDrawRectangle( posX+220, resY / 2 - 12.5 , 250, 25, tocolor(255, 255, 255, alpha))
 		dxDrawRectangle( posX+220, resY / 2 - 12.5+37.5 , 250, 25, tocolor(255, 255, 255, alpha))
 		dxDrawRectangle( posX+220+225, resY / 2 - 12.5+37.5 , 25, 25, tocolor(255, 64, 0, alpha))
@@ -282,7 +282,7 @@ local function mainRender()
 		dxDrawText( pass, posX+220+5, resY / 2+37.5 , left, top,(#password == 0 and tocolor(150, 150, 150, alpha) or tocolor(0, 0, 0, alpha)), 0.5, segoeui, 'left', 'center')
 		dxDrawRectangle(posX-12.5, resY/2-112.5, 487.5, 225, tocolor( 255, 255, 255, alpha1) )
 		dxDrawImage( posX, resY/2-100, 200, 200, 'images/profil.png',0,0,0,tocolor(255,255,255,alpha))
-		dxDrawText ( "Ultimate-RL", resX-375, resY-100, 375, screenheight, tocolor ( 255, 255, 0 ), 2, "pricedown", "left", "top" )
+		dxDrawText ( "LSG-RL", resX-375, resY-100, 375, screenheight, tocolor ( 255, 255, 0 ), 2, "pricedown", "left", "top" )
 		if #password > 0 then
 			dxDrawImage( posX+220-70+250, resY/2-11.25+37.5 , 22.5, 22.5, 'images/show.png',0,0,0,tocolor(255,255,255,alpha))
 		end
@@ -327,7 +327,7 @@ addEventHandler ( "DisableLoginWindow", getRootElement(), respondServer)
 
 
 function ShowInfoWindow ()
-	infobox_start_func("\nHerzlich Willkommen\nauf Ultimate Reallife!!", 7500 )
+	infobox_start_func("\nHerzlich Willkommen\nauf LittleSpyGames Reallife!!", 7500 )
 end
 
 function startRender ( name, boolean )

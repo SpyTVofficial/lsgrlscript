@@ -199,19 +199,19 @@ function getPlayerWarns ( name )
 end
 
 
---function createCarhouses ()
---	local result = dbPoll ( dbQuery ( handler, "SELECT * FROM carhouses_icons" ), -1 )
---	if result then
---		if #result > 0 then
---			mySQLCarhouseCreate ( result )
---		else
---			outputServerLog ( "Es wurden keine Autohäuser gefunden" )
---		end
---	else
---		outputDebugString ( "[createCarhouses] Error executing the query" )
---	end
---end
---addEventHandler ( "onResourceStart", resourceRoot, createCarhouses ) 
+function createCarhouses ()
+	local result = dbPoll ( dbQuery ( handler, "SELECT * FROM carhouses_icons" ), -1 )
+	if result then
+		if #result > 0 then
+			mySQLCarhouseCreate ( result )
+		else
+			outputServerLog ( "Es wurden keine Autohäuser gefunden" )
+		end
+	else
+		outputDebugString ( "[createCarhouses] Error executing the query" )
+	end
+end
+addEventHandler ( "onResourceStart", resourceRoot, createCarhouses ) 
 
 
 addEventHandler ( "onResourceStart", resourceRoot, function ()
@@ -298,57 +298,57 @@ function mySQLMailCheck ( array )
 end
 
 
---function loadOffers ()
---	curDrugOffers = 0
---	curMatsOffers = 0
---	curVehOffers = 0
---	curHousesOffers = 0
---	curPrestigeOffers = 0
---	curGaragesOffers = 0
---	curSpecialOffers = 0
---	
---	DrugOffers = {}
---	MatsOffers = {}
---	VehOffers = {}
---	HousesOffers = {}
---	PrestigeOffers = {}
---	GaragesOffers = {}
---	SpecialOffers = {}
---	
---	local result = dbPoll ( dbQuery ( handler, "SELECT * FROM buyit" ), -1 )
---	if result then
---		if result[1] then
---			for i=1, #result do
---				local ID = tonumber ( result[i]["ID"] )
---				usedAuktionIDs[ID] = true
---				local Typ = result[i]["Typ"]
---				_G["cur"..Typ.."Offers"] = _G["cur"..Typ.."Offers"] + 1
---				local Anbieter = result[i]["Anbieter"]
---				local Hoechstbietender = result[i]["Hoechstbietender"]
---				local Hoechstgebot = result[i]["Hoechstgebot"]
---				local LaeuftBis = result[i]["LaeuftBis"]
---				local Beschreibung = result[i]["Beschreibung"]
---				local OptischesDatum = result[i]["OptischesDatum"]
---				local Anzahl = result[i]["Anzahl"]
---				
---				_G[Typ.."Offers"][ID] = ID
---				_G[Typ.."Offers"][ID] = {}
---				_G[Typ.."Offers"][ID]["Typ"] = Typ
---				_G[Typ.."Offers"][ID]["Anbieter"] = Anbieter
---				_G[Typ.."Offers"][ID]["Hoechstbietender"] = Hoechstbietender
---				_G[Typ.."Offers"][ID]["Hoechstgebot"] = Hoechstgebot
---				_G[Typ.."Offers"][ID]["LaeuftBis"] = LaeuftBis
---				_G[Typ.."Offers"][ID]["Beschreibung"] = Beschreibung
---				_G[Typ.."Offers"][ID]["OptischesDatum"] = OptischesDatum
---				_G[Typ.."Offers"][ID]["Anzahl"] = Anzahl
---			end
---		end
---	else
---		outputDebugString ( "[loadOffers] Error executing the query" )
---	end		
---	globalBuyItCheck ()
---end
---addEventHandler ( "onResourceStart", resourceRoot, loadOffers )
+function loadOffers ()
+	curDrugOffers = 0
+	curMatsOffers = 0
+	curVehOffers = 0
+	curHousesOffers = 0
+	curPrestigeOffers = 0
+	curGaragesOffers = 0
+	curSpecialOffers = 0
+	
+	DrugOffers = {}
+	MatsOffers = {}
+	VehOffers = {}
+	HousesOffers = {}
+	PrestigeOffers = {}
+	GaragesOffers = {}
+	SpecialOffers = {}
+	
+	local result = dbPoll ( dbQuery ( handler, "SELECT * FROM buyit" ), -1 )
+	if result then
+		if result[1] then
+			for i=1, #result do
+				local ID = tonumber ( result[i]["ID"] )
+				usedAuktionIDs[ID] = true
+				local Typ = result[i]["Typ"]
+				_G["cur"..Typ.."Offers"] = _G["cur"..Typ.."Offers"] + 1
+				local Anbieter = result[i]["Anbieter"]
+				local Hoechstbietender = result[i]["Hoechstbietender"]
+				local Hoechstgebot = result[i]["Hoechstgebot"]
+				local LaeuftBis = result[i]["LaeuftBis"]
+				local Beschreibung = result[i]["Beschreibung"]
+				local OptischesDatum = result[i]["OptischesDatum"]
+				local Anzahl = result[i]["Anzahl"]
+				
+				_G[Typ.."Offers"][ID] = ID
+				_G[Typ.."Offers"][ID] = {}
+				_G[Typ.."Offers"][ID]["Typ"] = Typ
+				_G[Typ.."Offers"][ID]["Anbieter"] = Anbieter
+				_G[Typ.."Offers"][ID]["Hoechstbietender"] = Hoechstbietender
+				_G[Typ.."Offers"][ID]["Hoechstgebot"] = Hoechstgebot
+				_G[Typ.."Offers"][ID]["LaeuftBis"] = LaeuftBis
+				_G[Typ.."Offers"][ID]["Beschreibung"] = Beschreibung
+				_G[Typ.."Offers"][ID]["OptischesDatum"] = OptischesDatum
+				_G[Typ.."Offers"][ID]["Anzahl"] = Anzahl
+			end
+		end
+	else
+		outputDebugString ( "[loadOffers] Error executing the query" )
+	end		
+	globalBuyItCheck ()
+end
+addEventHandler ( "onResourceStart", resourceRoot, loadOffers )
 
 
 function createSaveAblePlacedObjects ()
@@ -438,7 +438,7 @@ function saveStatisticsMySQL ( player )
 		if result and result[1] then
 			for _, row in pairs ( result ) do
 				for column, _ in pairs ( row ) do
-					if column ~= "Name" and column ~= "UID" then      -- ÄNDERN - Name Unnötig!
+					if column ~= "Name" and column ~= "UID" then       ÄNDERN - Name Unnötig!
 						number = number + 1
 						ids[number] = column
 					end
